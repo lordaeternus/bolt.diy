@@ -1,15 +1,8 @@
-import { defineConfig } from 'vite'
-import dotenv from 'dotenv'
-dotenv.config()
-
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   server: {
-    host: '0.0.0.0',
-    port: 5173,
-    allowedHosts: process.env.ALLOWED_HOSTS
-      ? process.env.ALLOWED_HOSTS.split(',').map(h => h.trim())
-      : 'all',
-    strictPort: true
+    host: '0.0.0.0', // permite acesso externo
+    allowedHosts: ['automacao-boltdiy.0rau8r.easypanel.host'] // seu domínio
   }
-})
+});
